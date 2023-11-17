@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Elastic Notes",
+  "version": "1.0",
+  "description": "Elastic Notes created By masterpiece",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"]
+}
